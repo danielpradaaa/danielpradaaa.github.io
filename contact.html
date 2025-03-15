@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+	<title>Daniel Prada - Portfolio</title>
+	<link rel="icon" href="data:,">
+    
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    
+    <!-- FontAwesome JS -->
+    <script defer src="assets/fontawesome/js/all.js"></script>
+    
+    <!-- Theme CSS -->  
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head> 
+
+<body>
+    
+	<div id="header-placeholder"></div> <!-- Header will be loaded here -->
+
+	    
+    <div class="main-wrapper">
+	    <section class="cta-section theme-bg-light py-5">
+		    <div class="container text-center single-col-max-width">
+			    <h2 class="heading">Contact</h2>
+			    <div class="intro" data-fr="Intéressé par mon profil ou simplement envie de dire bonjour ? Vous pouvez remplir le formulaire de contact ci-dessous." data-en="Interested in my profile or just want to say hi? You can fill in the contact form below.">
+			    <p>Interested in my profile or just want to say hi? You can fill in the contact form below.</a></p>
+	
+	                
+			    
+			</div><!--//container-->
+	    </section>
+		<section class="contact-section px-3 py-5 p-md-5">
+			<div class="container">
+				<form id="contact-form" class="contact-form col-lg-8 mx-lg-auto" method="POST" action="https://formsubmit.co/dea376f9f33cbf1ef791168e3bd267ee">
+					<input type="hidden" name="_next" id="redirectUrl">
+					<h3 class="text-center mb-3" data-en="Get In Touch" data-fr="Prenez contact">Get In Touch</h3>
+					<input type="hidden" name="_captcha" value="false">
+					<div class="row g-3">
+						<div class="col-12 col-md-6">
+							<label class="sr-only" for="cname">Name</label>
+							<input type="text" class="form-control" id="cname" name="name" 
+								   data-en="Name" data-fr="Nom" 
+								   placeholder="Name" minlength="2" required>
+						</div>
+						<div class="col-12 col-md-6">
+							<label class="sr-only" for="cemail">Email</label>
+							<input type="email" class="form-control" id="cemail" name="email" 
+								   data-en="Email" data-fr="E-mail" 
+								   placeholder="Email" required>
+						</div>
+						<div class="col-12">
+							<label class="sr-only" for="cmessage">Your message</label>
+							<textarea class="form-control" id="cmessage" name="message" 
+									  data-en="Enter your message" data-fr="Entrez votre message" 
+									  placeholder="Enter your message" rows="10" required></textarea>
+						</div>
+						<div class="form-group col-12">
+							<button type="submit" class="btn btn-block btn-primary py-2" 
+									data-en="Send Now" data-fr="Envoyer">Send Now</button>
+						</div>
+					</div><!--//form-row-->
+				</form>
+			</div><!--//container-->
+		</section>
+	    
+	    <footer class="footer text-center py-4">
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		</footer>
+    
+    </div><!--//main-wrapper-->
+    
+    <!-- Javascript -->          
+    <script src="assets/plugins/popper.min.js"></script> 
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script> 
+	<script src="assets/js/toggles.js"></script>
+
+    
+    <!-- Dark Mode -->
+	<script src="assets/plugins/js-cookie.min.js"></script>
+
+    <!-- Style Switcher (REMOVE ON YOUR PRODUCTION SITE) -->    
+	<script>
+		document.addEventListener("DOMContentLoaded", function () {
+		  const currentDomain = window.location.origin; // Gets "http://127.0.0.1:5500" or "https://yourgithubpage.com"
+		  document.getElementById("redirectUrl").value = currentDomain + "/contact_thanks.html";
+		});
+	  </script>
+	  
+
+</body>
+</html> 
+

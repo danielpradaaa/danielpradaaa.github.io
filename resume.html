@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Daniel Prada - Portfolio</title>
+	<link rel="icon" href="data:,">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="DevCard Bootstrap 5 Template">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+
+	<!-- FontAwesome JS -->
+	<script defer src="assets/fontawesome/js/all.js"></script>
+
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+	<!-- Load PDF.js library -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+</head>
+
+<body>
+	<div id="header-placeholder"></div>
+
+	<div class="main-wrapper">
+		<div class="pdf-container" style="position:relative;">
+			<canvas id="pdf-viewer"></canvas>
+		</div>
+
+		<div class="container text-center single-col-max-width">
+			<a class="btn btn-primary" id="cv-download-link" href="./assets/DanielPradaCVENG.pdf"
+				download="Daniel Prada CV.pdf" data-en-href="./assets/DanielPradaCVENG.pdf"
+				data-fr-href="./assets/DanielPradaCVFR.pdf" data-en-download="Daniel Prada CV.pdf"
+				data-fr-download="Daniel Prada CV FR.pdf" data-en="Download PDF Version"
+				data-fr="Télécharger la version PDF">
+				<i class="fas fa-file-pdf me-2"></i>Download PDF Version
+			</a>
+		</div>
+
+		<script>
+			// Ensure PDF.js is loaded
+if (typeof pdfjsLib === 'undefined') {
+    console.error('PDF.js library is not loaded!');
+} else {
+    console.log('PDF.js library is loaded successfully.');
+
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+    const pdfUrls = {
+        en: "assets/DanielPradaCVENG.pdf", // English PDF
+        fr: "assets/DanielPradaCVFR.pdf",  // French PDF
+    };
+
+    let isRendering = false; // Flag to track if rendering is in progress
+    let currentRenderTask = null; // Track the current rendering task
+
+    function renderPDF(url) {
+        if (isRendering) {
+            console.log('Rendering already in progress. Skipping...');
+            return;
+        }
+
+        console.log('Rendering PDF from URL:', url);
+
+        const canvas = document.getElementById('pdf-viewer');
+        const context = canvas.getContext('2d');
+
+        if (!canvas || !context) {
+            console.error('Canvas or context not found!');
+            return;
+        }
+
+        // Cancel any ongoing rendering task
+        if (currentRenderTask) {
+            console.log('Canceling previous render task...');
+            currentRenderTask.cancel();
+            currentRenderTask = null;
+        }
+
+        // Clear the canvas
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Reset canvas dimensions
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+
+        // Set rendering flag
+        isRendering = true;
+
+        // Load and render the PDF
+        pdfjsLib.getDocument(url).promise
+            .then(function (pdf) {
+                console.log('PDF loaded successfully.');
+                return pdf.getPage(1); // Render the first page
+            })
+            .then(function (page) {
+                console.log('Rendering page 1...');
+
+                // Adjust PDF scale based on screen width
+                const viewport = page.getViewport({ scale: window.innerWidth / page.getViewport({ scale: 1 }).width });
+
+                // Set canvas dimensions to match the PDF page
+                canvas.width = viewport.width;
+                canvas.height = viewport.height;
+
+                // Render the PDF page
+                const renderContext = {
+                    canvasContext: context,
+                    viewport: viewport
+                };
+
+                // Track the current rendering task
+                currentRenderTask = page.render(renderContext);
+
+                return currentRenderTask.promise;
+            })
+            .then(function () {
+                console.log('PDF rendered successfully.');
+            })
+            .catch(function (error) {
+                console.error('Error rendering PDF:', error);
+            })
+            .finally(function () {
+                // Reset rendering flag
+                isRendering = false;
+            });
+    }
+
+    // Debounce function to limit how often a function is called
+    function debounce(func, wait) {
+        let timeout;
+        return function (...args) {
+            clearTimeout(timeout);
+            timeout = setTimeout(() => func.apply(this, args), wait);
+        };
+    }
+
+    // Render the PDF after the DOM is fully loaded
+    document.addEventListener("DOMContentLoaded", function () {
+        const currentLanguage = localStorage.getItem("language") || "en";
+        renderPDF(pdfUrls[currentLanguage]); // Render PDF once on initial load
+    });
+
+    // Re-render PDF when the window is resized (debounced)
+    window.addEventListener('resize', debounce(function () {
+        const currentLanguage = localStorage.getItem("language") || "en";
+        renderPDF(pdfUrls[currentLanguage]);
+    }, 200)); // Adjust the debounce delay as needed
+
+    // Listen for language toggle changes
+    document.addEventListener('languageChanged', function (e) {
+        const language = e.detail.language;
+        renderPDF(pdfUrls[language]); // Re-render the PDF for the selected language
+    });
+}
+		</script>
+
+		<footer class="footer text-center py-4">
+			<br>
+		</footer>
+	</div>
+
+	<!-- Javascript -->
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script src="assets/js/toggles.js"></script>
+
+	<!-- Dark Mode -->
+	<script src="assets/plugins/js-cookie.min.js"></script>
+</body>
+
+</html>

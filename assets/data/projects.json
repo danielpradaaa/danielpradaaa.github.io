@@ -1,0 +1,89 @@
+[
+    {
+        "id": 1,
+        "title": {
+            "en": "Pi-hole and Network Security with Raspberry Pi",
+            "fr": "Pi-hole et sécurité réseau avec Raspberry Pi"
+        },
+        "shortDescription": {
+            "en": "This project focused on enhancing network security and privacy by setting up Pi-hole on a Raspberry Pi, integrating secure DNS resolution, and managing the system remotely for optimal and uninterrupted operation.",
+            "fr": "Ce projet visait à améliorer la sécurité et la confidentialité du réseau en configurant Pi-hole sur un Raspberry Pi, en intégrant une résolution DNS sécurisée et en gérant le système à distance pour un fonctionnement optimal et ininterrompu."
+        },
+        "fullDescription": {
+            "en": [
+                "Installed and configured Pi-hole on a Raspberry Pi 4 to block unwanted advertisements and improve network performance.",
+                "Integrated Unbound DNS with Pi-hole to enhance DNS resolution security, ensuring encrypted and private DNS queries.",
+                "Configured WireGuard VPN on the Raspberry Pi to securely access the home network from anywhere."
+            ],
+            "fr": [
+                "Installation et configuration de Pi-hole sur un Raspberry Pi 4 pour bloquer les publicités indésirables et améliorer les performances du réseau.",
+                "Intégration d'Unbound DNS avec Pi-hole pour renforcer la sécurité de la résolution DNS, garantissant des requêtes DNS cryptées et privées.",
+                "Configuration de WireGuard VPN sur le Raspberry Pi pour accéder en toute sécurité au réseau domestique depuis n'importe où."
+            ]
+        },
+        "image": "assets/images/projects/pihole/no_heatsink.jpg",
+        "images_description": [
+            "assets/images/projects/pihole/pihole-dashboard.webp",
+            "assets/images/projects/pihole/raspberry.webp"
+        ]
+    },
+    {
+        "id": 2,
+        "title": {
+            "en": "Home Server Setup with TrueNAS and VPN Integration",
+            "fr": "Configuration d'un serveur domestique avec TrueNAS et intégration VPN"
+        },
+        "shortDescription": {
+            "en": "This project focused on building and securing a home server environment using TrueNAS, incorporating remote access via a VPN and configuring network services for optimal management.",
+            "fr": "Ce projet visait à construire et sécuriser un environnement de serveur domestique en utilisant TrueNAS, en intégrant un accès à distance via un VPN et en configurant les services réseau pour une gestion optimale."
+        },
+        "fullDescription": {
+            "en": [
+                "Installed and configured TrueNAS on a mini-PC, optimizing system resources for use as a home server with secure storage management.",
+                "Set up a storage pool and structured directories for media and configuration files, ensuring efficient data organization and access.",
+                "Implemented a WireGuard VPN for secure remote access and DNS resolution using Pi-hole, enhancing network security and management."
+            ],
+            "fr": [
+                "Installation et configuration de TrueNAS sur un mini-PC, en optimisant les ressources système pour une utilisation en tant que serveur domestique avec une gestion de stockage sécurisée.",
+                "Mise en place d'un pool de stockage et de répertoires structurés pour les fichiers multimédias et de configuration, garantissant une organisation et un accès efficaces aux données.",
+                "Mise en œuvre d'un VPN WireGuard pour un accès à distance sécurisé et une résolution DNS via Pi-hole, améliorant la sécurité et la gestion du réseau."
+            ]
+        },
+        "image": "assets/images/projects/truenas/truenas-scale-docker.jpg",
+        "images_description": [
+            "assets/images/projects/truenas/Screenshot.jpg",
+            "assets/images/projects/truenas/dashboard.png"
+        ]
+    },
+    {
+        "id": 3,
+        "title": {
+            "en": "Personal Portfolio Website Development",
+            "fr": "Développement d'un site web de portfolio personnel"
+        },
+        "shortDescription": {
+            "en": "This project focused on building a personal portfolio website with a modern, responsive design to effectively present professional experience and technical expertise.",
+            "fr": "Ce projet visait à créer un site web de portfolio personnel avec un design moderne et réactif pour présenter efficacement l'expérience professionnelle et les compétences techniques."
+        },
+        "fullDescription": {
+            "en": [
+                "Designed and developed a portfolio website to showcase professional projects, technical skills, and achievements.",
+                "Developed a pages using HTML, CSS, and JavaScript.",
+                "Integrated dynamic content loading from a JSON file to display project details.",
+                "Used Bootstrap for layout and styling to ensure a clean and modern design.",
+                "Deployed the website using GitHub Pages for easy access and sharing."
+            ],
+            "fr": [
+                "Conception et développement d'un site web de portfolio pour présenter des projets professionnels, des compétences techniques et des réalisations.",
+                "Développement de pages en utilisant HTML, CSS et JavaScript.",
+                "Intégration du chargement dynamique de contenu à partir d'un fichier JSON pour afficher les détails des projets.",
+                "Utilisation de Bootstrap pour la mise en page et le style afin d'assurer un design propre et moderne.",
+                "Déploiement du site web via GitHub Pages pour un accès et un partage faciles."
+            ]
+        },
+        "image": "assets/images/projects/portfolio/portfolio.png",
+        "images_description": [
+            "assets/images/projects/portfolio/Screenshot.png"
+        ]
+    }
+]
