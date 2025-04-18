@@ -14230,6 +14230,7 @@ textarea.form-control {
 }
 
 .overview-section .item-desc {
+  text-align: justify;
   color: #4f4f4f;
   font-size: 0.875rem
 }
