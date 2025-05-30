@@ -85,5 +85,40 @@
         "images_description": [
             "assets/images/projects/portfolio/Screenshot.png"
         ]
+    },
+    {
+        "id": 4,
+        "title": {
+            "en": "Segmented Home Network with VLANs, Pi-hole, and Secure Remote Access",
+            "fr": "Réseau domestique segmenté avec VLAN, Pi-hole et accès sécurisé à distance"
+        },
+        "shortDescription": {
+            "en": "Designed a segmented network architecture using DD-WRT to isolate guest devices, enforce DNS-level filtering with Pi-hole, and enable secure VPN-based remote access via WireGuard.",
+            "fr": "Conception d'une architecture réseau segmentée à l'aide de DD-WRT pour isoler les appareils invités, appliquer un filtrage DNS avec Pi-hole et permettre un accès à distance sécurisé via WireGuard."
+        },
+        "fullDescription": {
+            "en": [
+                "Configured DD-WRT on an Asus router to manage a main LAN and isolated Guest VLAN (wl1.1) on subnets 192.168.1.0/24 and 192.168.2.0/24.",
+                "Set iptables firewall rules to block inter-VLAN traffic and restrict guest access to router and LAN devices.",
+                "Assigned VLAN-specific DNS: Pi-hole for main LAN, Google DNS (8.8.8.8, 8.8.4.4) for guests.",
+                "Used No-IP DDNS to maintain access despite ISP IP changes.",
+                "Deployed WireGuard VPN on DD-WRT for encrypted remote access with custom routing.",
+                "Emphasized network segmentation, DNS filtering, and secure remote access as core security practices."
+            ],
+            "fr": [
+                "Configuration de DD-WRT sur un routeur Asus pour gérer un LAN principal et un VLAN invité isolé (wl1.1) sur les sous-réseaux 192.168.1.0/24 et 192.168.2.0/24.",
+                "Règles iptables pour bloquer le trafic inter-VLAN et limiter l'accès invité au routeur et aux appareils du LAN.",
+                "DNS spécifiques par VLAN : Pi-hole pour le LAN principal, Google DNS (8.8.8.8, 8.8.4.4) pour les invités.",
+                "Utilisation de No-IP DDNS pour conserver l'accès malgré les changements d'IP publique.",
+                "Déploiement de WireGuard sur DD-WRT pour un accès distant chiffré avec routage personnalisé.",
+                "Accent sur la segmentation réseau, le filtrage DNS et l'accès distant sécurisé comme pratiques de cybersécurité."
+            ]
+        },
+        "image": "assets/images/projects/network/RouterDiagram.png",
+        "images_description": [
+            "assets/images/projects/network/RouterDiagram.png",
+            "assets/images/projects/network/DDWRT1.png",
+            "assets/images/projects/network/DDWRT2.png"
+        ]
     }
 ]
